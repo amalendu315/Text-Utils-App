@@ -37,3 +37,28 @@
   }
 }
 
+.myFooter{
+  background-image: linear-gradient(rgba(15, 19, 236, 0.7),rgba(236, 221, 16, 0.7)),url(./footer-bg.png);
+  height: 100%;
+  width: 100%;
+  background-size: cover;
+  background-position: center;
+}
+.row{
+  text-align: center;
+}
+.text-uppercase{
+  color: white;
+  margin-top: 5px;
+}
+.tex{
+  color: white
+}
+#links1{
+  color: white;
+  cursor: pointer;
+}
+.copyright{
+  color: white;
+  margin-top: -20px;
+}
