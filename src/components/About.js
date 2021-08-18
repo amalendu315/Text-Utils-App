@@ -3,7 +3,7 @@ import React from 'react'
 export default function About() {
     return (
         <div className="container">
-        <h2 className="text-uppercase my-3">About Us</h2>
+        <h2 className="text-center">About Us</h2>
             <div className="accordion" id="accordionExample">
                 <div className="accordion-item">
                     <h2 className="accordion-header" id="headingOne">
@@ -42,6 +42,7 @@ export default function About() {
                     </div>
                 </div>
             </div>
+            <button type="button" className="btn btn-primary my-3">Enable Dark Mode</button>
         </div>
     )
 }
