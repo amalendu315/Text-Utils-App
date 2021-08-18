@@ -17,12 +17,21 @@ export default function TextForm(props) {
         let newText = '';
         setText(newText);
     }
+    let style2 = {
+        backgroundColor: 'transparent',
+        borderRadius:'25px',
+        color: 'white',
+        borderColor: 'cyan'
+    }
+    let style3 = {
+        color: 'white'
+    }
     return (
         <>
             <div className="container">
-                <h1 className="text-center">{props.heading}</h1>
+                <h1 className="text-center" style={style3}>{props.heading}</h1>
                 <div className="mb-3">
-                    <textarea className="form-control text-center" id="myBox" value={text} onChange={handleOnChange} rows="8"></textarea>
+                    <textarea className="form-control text-center" id="myBox" style={style2} value={text} onChange={handleOnChange} rows="8"></textarea>
                 </div>
                 <div id="buttons">
                     <button className="btn btn-primary mx-2" id='btn-bhsra1' onClick={handleUPclick}>Convert to UPPERCASE</button>
@@ -31,11 +40,11 @@ export default function TextForm(props) {
                 </div>
             </div>
             <div className="container my-3">
-                <h2 className="text-center mt-10">Your Text Summary</h2>
-                <p className="text-center">{text.split(" ").length} words and {text.length} characters</p>
-                <p className="text-center">{0.008* text.split(" ").length} Minutes needed to read.</p>
-                <h2 className="text-center mt-10">PREVIEW OF YOUR GIVEN TEXT</h2>
-                <p className="text-center">{text}</p>
+                <h2 className="text-center mt-10" style={style3}>Your Text Summary</h2>
+                <p className="text-center" style={style3}>{text.split(" ").length} words and {text.length} characters</p>
+                <p className="text-center" style={style3}>{0.008* text.split(" ").length} Minutes needed to read.</p>
+                <h2 className="text-center mt-10" style={style3}>PREVIEW OF YOUR GIVEN TEXT</h2>
+                <p className="text-center" style={style3}>{text}</p>
             </div>
         </>
     )
