@@ -1,10 +1,11 @@
 import React, { useState } from "react";
 import "./App.css";
-// import About from './components/About'
+import About from "./components/About";
 // import Footer from "./components/Footer";
 import Navbar from "./components/Navbar";
 import TextForm from "./components/TextForm";
 import Alert from "./components/Alert";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 function App() {
   const [mode, setMode] = useState("light");
@@ -32,22 +33,31 @@ function App() {
     }
   };
   return (
-    <div className="body_class">
-      <Navbar title="TextUtils" mode={mode} toggleMode={toggleMode} />
-      <Alert alert={alert} />
-      <div className="container my-3">
-        <TextForm
-          heading="Enter a text to analyse below"
-          mode={mode}
-          showAlert={showAlert}
-        />
-      </div>
-      {/* <About/> */}
-      {/* <hr className="line" />
+    <>
+      <Router>
+        <Navbar title="TextUtils" mode={mode} toggleMode={toggleMode} />
+        <Alert alert={alert} />
+        <div className="container my-3">
+          <Switch>
+            <Route exact path="/about">
+              <About />
+            </Route>
+            <Route exact path="/">
+              <TextForm
+                heading="Enter a text to analyse below"
+                mode={mode}
+                showAlert={showAlert}
+              />
+            </Route>
+          </Switch>
+          {/* <About/> */}
+        </div>
+        {/* <hr className="line" />
       <div className="footer">
         <Footer />
       </div> */}
-    </div>
+      </Router>
+    </>
   );
 }
 
