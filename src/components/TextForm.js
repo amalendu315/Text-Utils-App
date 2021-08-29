@@ -21,11 +21,7 @@ export default function TextForm(props) {
     props.showAlert("Text Has Been Cleared", "success");
   };
   const handleCopy = () => {
-    console.log("I am Copy");
-    var text = document.getElementById("myBox");
-    text.select();
-    navigator.clipboard.writeText(text.value);
-    document.getSelection();
+    navigator.clipboard.writeText(text);
     props.showAlert("Copied to clipboard", "success");
   };
   const handleExtraSpaces = () => {
