@@ -37,26 +37,6 @@
   }
 }
 
-/* .myFooter{
-  background-image: linear-gradient(rgba(0, 0, 0, 0.4),rgba(0, 0, 0, 0.4)),url(./footer-bg.png);
-  height: 100%;
-  width: 100%;
-  background-size: cover;
-  background-position: center;
-} */
-/* Here My App CSS Found */
-/* .myFooter {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8));
-  margin-top: -23px;
-}
-.body_class {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
-    url(./text_utils_bg.jpg);
-} */
-
-/* .row {
-  text-align: center;
-} */
 .text-uppercase {
   color: white;
   margin-top: 5px;

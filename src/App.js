@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import "./App.css";
 import About from "./components/About";
-// import Footer from "./components/Footer";
 import Navbar from "./components/Navbar";
 import TextForm from "./components/TextForm";
 import Alert from "./components/Alert";
@@ -24,12 +23,10 @@ function App() {
       setMode("dark");
       document.body.style.backgroundColor = "grey";
       showAlert("Dark Mode Enabled", "success");
-      // document.title = "TextUtils-Dark Mode";
     } else {
       setMode("light");
       document.body.style.backgroundColor = "white";
       showAlert("Light Mode Enabled", "success");
-      // document.title = "TextUtils-Light Mode";
     }
   };
   return (
@@ -50,12 +47,7 @@ function App() {
               />
             </Route>
           </Switch>
-          {/* <About/> */}
         </div>
-        {/* <hr className="line" />
-      <div className="footer">
-        <Footer />
-      </div> */}
       </Router>
     </>
   );

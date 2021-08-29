@@ -33,12 +33,6 @@ export default function TextForm(props) {
     setText(newText.join(" "));
     props.showAlert("Extra Spaces Removed", "success");
   };
-  //   let style2 = {
-  //     backgroundColor: "transparent",
-  //     borderRadius: "25px",
-  //     color: "white",
-  //     borderColor: "cyan",
-  //   };
   return (
     <>
       <div
@@ -52,7 +46,6 @@ export default function TextForm(props) {
           <textarea
             className="form-control text-center"
             id="myBox"
-            // style={style2}
             value={text}
             onChange={handleOnChange}
             style={{
@@ -114,7 +107,7 @@ export default function TextForm(props) {
         <h2 className="text-center mt-10">Your Text Summary</h2>
         <p className="text-center">
           {
-            text.split(" ").filter((element) => {
+            text.split(/\s+/).filter((element) => {
               return element.length !== 0;
             }).length
           }{" "}
@@ -122,7 +115,7 @@ export default function TextForm(props) {
         </p>
         <p className="text-center">
           {0.008 *
-            text.split(" ").filter((element) => {
+            text.split(/\s+/).filter((element) => {
               return element.length !== 0;
             }).length}{" "}
           Minutes needed to read.
