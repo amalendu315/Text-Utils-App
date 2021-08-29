@@ -89,7 +89,11 @@ export default function TextForm(props) {
           words and {text.length} characters
         </p>
         <p className="text-center">
-          {0.008 * text.split(" ").length} Minutes needed to read.
+          {0.008 *
+            text.split(" ").filter((element) => {
+              return element.length !== 0;
+            }).length}{" "}
+          Minutes needed to read.
         </p>
         <h2 className="text-center mt-10">PREVIEW OF YOUR GIVEN TEXT</h2>
         <p className="text-center">
