@@ -20,12 +20,12 @@ export default function TextForm(props) {
     setText(newText);
     props.showAlert("Text Has Been Cleared", "success");
   };
-  let style2 = {
-    backgroundColor: "transparent",
-    borderRadius: "25px",
-    color: "white",
-    borderColor: "cyan",
-  };
+  //   let style2 = {
+  //     backgroundColor: "transparent",
+  //     borderRadius: "25px",
+  //     color: "white",
+  //     borderColor: "cyan",
+  //   };
   return (
     <>
       <div
@@ -39,7 +39,7 @@ export default function TextForm(props) {
           <textarea
             className="form-control text-center"
             id="myBox"
-            style={style2}
+            // style={style2}
             value={text}
             onChange={handleOnChange}
             style={{
@@ -51,21 +51,21 @@ export default function TextForm(props) {
         </div>
         <div id="buttons">
           <button
-            className="btn btn-primary mx-2"
+            className="btn btn-primary mx-2 my-2"
             id="btn-bhsra1"
             onClick={handleUPclick}
           >
             Convert to UPPERCASE
           </button>
           <button
-            className="btn btn-primary mx-2"
+            className="btn btn-primary mx-2 my-2"
             id="btn-bhsra2"
             onClick={handleLOWclick}
           >
             Convert to lowecase
           </button>
           <button
-            className="btn btn-primary mx-2"
+            className="btn btn-primary mx-2 my-2"
             id="btn-bhsra2"
             onClick={handleClearText}
           >
@@ -81,7 +81,12 @@ export default function TextForm(props) {
       >
         <h2 className="text-center mt-10">Your Text Summary</h2>
         <p className="text-center">
-          {text.split(" ").length} words and {text.length} characters
+          {
+            text.split(" ").filter((element) => {
+              return element.length !== 0;
+            }).length
+          }{" "}
+          words and {text.length} characters
         </p>
         <p className="text-center">
           {0.008 * text.split(" ").length} Minutes needed to read.
