@@ -5,6 +5,7 @@ export default function TextForm(props) {
   const handleUPclick = () => {
     let newText = text.toUpperCase();
     setText(newText);
+    props.showAlert("Converted to UpperCase !!", "success");
   };
   const handleOnChange = (event) => {
     setText(event.target.value);
@@ -12,10 +13,12 @@ export default function TextForm(props) {
   const handleLOWclick = () => {
     let newText = text.toLowerCase();
     setText(newText);
+    props.showAlert("Converted to lowercase !!", "success");
   };
   const handleClearText = () => {
     let newText = "";
     setText(newText);
+    props.showAlert("Text Has Been Cleared", "success");
   };
   let style2 = {
     backgroundColor: "transparent",
