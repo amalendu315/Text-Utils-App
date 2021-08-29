@@ -24,12 +24,12 @@ function App() {
       setMode("dark");
       document.body.style.backgroundColor = "grey";
       showAlert("Dark Mode Enabled", "success");
-      document.title = "TextUtils-Dark Mode";
+      // document.title = "TextUtils-Dark Mode";
     } else {
       setMode("light");
       document.body.style.backgroundColor = "white";
       showAlert("Light Mode Enabled", "success");
-      document.title = "TextUtils-Light Mode";
+      // document.title = "TextUtils-Light Mode";
     }
   };
   return (
@@ -44,7 +44,7 @@ function App() {
             </Route>
             <Route exact path="/">
               <TextForm
-                heading="Enter a text to analyse below"
+                heading="Try TextUtils"
                 mode={mode}
                 showAlert={showAlert}
               />

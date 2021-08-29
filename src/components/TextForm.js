@@ -20,6 +20,19 @@ export default function TextForm(props) {
     setText(newText);
     props.showAlert("Text Has Been Cleared", "success");
   };
+  const handleCopy = () => {
+    console.log("I am Copy");
+    var text = document.getElementById("myBox");
+    text.select();
+    navigator.clipboard.writeText(text.value);
+    document.getSelection();
+    props.showAlert("Copied to clipboard", "success");
+  };
+  const handleExtraSpaces = () => {
+    let newText = text.split(/[ ]+/);
+    setText(newText.join(" "));
+    props.showAlert("Extra Spaces Removed", "success");
+  };
   //   let style2 = {
   //     backgroundColor: "transparent",
   //     borderRadius: "25px",
@@ -34,7 +47,7 @@ export default function TextForm(props) {
           color: props.mode === "dark" ? "white" : "black",
         }}
       >
-        <h1 className="text-center">{props.heading}</h1>
+        <h1 className="text-center mb-2">{props.heading}</h1>
         <div className="mb-3">
           <textarea
             className="form-control text-center"
@@ -54,6 +67,7 @@ export default function TextForm(props) {
             className="btn btn-primary mx-2 my-2"
             id="btn-bhsra1"
             onClick={handleUPclick}
+            disabled={text.length === 0}
           >
             Convert to UPPERCASE
           </button>
@@ -61,6 +75,7 @@ export default function TextForm(props) {
             className="btn btn-primary mx-2 my-2"
             id="btn-bhsra2"
             onClick={handleLOWclick}
+            disabled={text.length === 0}
           >
             Convert to lowecase
           </button>
@@ -68,8 +83,25 @@ export default function TextForm(props) {
             className="btn btn-primary mx-2 my-2"
             id="btn-bhsra2"
             onClick={handleClearText}
+            disabled={text.length === 0}
           >
             Clear Text
+          </button>
+          <button
+            className="btn btn-primary mx-2 my-2"
+            id="btn-bhsra2"
+            onClick={handleCopy}
+            disabled={text.length === 0}
+          >
+            Copy Text
+          </button>
+          <button
+            className="btn btn-primary mx-2 my-2"
+            id="btn-bhsra2"
+            onClick={handleExtraSpaces}
+            disabled={text.length === 0}
+          >
+            Remove Extra Spaces
           </button>
         </div>
       </div>
@@ -97,7 +129,7 @@ export default function TextForm(props) {
         </p>
         <h2 className="text-center mt-10">PREVIEW OF YOUR GIVEN TEXT</h2>
         <p className="text-center">
-          {text.length > 0 ? text : "Enter Some Text Above To Preview Here"}
+          {text.length > 0 ? text : "Nothing to Preview"}
         </p>
       </div>
     </>
